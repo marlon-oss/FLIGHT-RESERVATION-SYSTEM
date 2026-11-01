@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudy Airlines | Booking Flights </title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+     <header class="bar"><a class="brand" href="#top"><span class="logo">☁</span> Cloudy Airlines<span class="accent">.</span></a><nav><a href="#booking">Flights</a><a href="#manage">Manage trip</a><a href="#how">How it works</a></nav><button id="theme" class="theme" type="button">☾ <span>Light</span></button></header>
+  <main id="top">
+    <section class="hero">
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <div class="hero-copy"><p class="eyebrow">CLOUDY AIRLINES · SOUTH AFRICA</p><h1>Your window seat to anywhere on Earth.</h1><p>Search South African routes and international routes, compare fares in rand, and save the reservation in a few simple steps.</p><a class="button white" href="#booking">Find a flight →</a></div>
+      <svg class="wing" viewBox="0 0 700 170" aria-hidden="true"><path d="M0 145 450 68 570 3 610 8 550 81 700 115 700 145 500 120 405 161 350 156 395 112 0 170Z" fill="#f7fafc" stroke="#b7c8d3" stroke-width="3"/><path d="m553 78 29-70 28 2-44 71Z" fill="#e26060"/></svg>
+      <span class="caption">CLOUDY AIRLINES · FARES IN ZAR</span>
+    </section>
+
+    <section id="booking" class="section">
+      <p class="eyebrow">YOUR NEXT TAKEOFF STARTS HERE</p><h2>Find your flight.</h2><p>Choose a route, compare sample fares, and make a reservation.</p>
+      <form id="search" class="card">
+        <div class="form-top"><div class="tabs"><button type="button" class="active" data-trip="return">Return</button><button type="button" data-trip="one-way">One way</button></div><small>Sample flights · South African rand (ZAR)</small></div>
+        <div class="fields">
+          <label>From<select name="origin" id="origin"></select></label>
+          <button id="swap" class="swap" type="button" aria-label="Swap cities">⇄</button>
+          <label>To<select name="destination" id="destination"></select></label>
+          <label>Departure<input id="depart" name="departure" type="date" required></label>
+          <label id="return-wrap">Return<input id="return" name="return" type="date" required></label>
+          <label>Travellers<select name="passengers" id="passengers"></select></label>
+          <button class="button submit" type="submit">Search flights →</button>
+        </div>
+        <small class="disclaimer">Illustrative schedules and fares only. No live seats or tickets are sold.</small>
+      </form>
+      <div id="results" aria-live="polite"></div>
+    </section>
+
+    <section id="manage" class="section split">
+      <div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Your trip, close at hand.</h2><p>Find a sample reservation saved in this browser with its reference and contact email.</p><small class="disclaimer">flight reservations stay on this device; they are not real tickets or airline bookings.</small></div>
+      <form id="lookup" class="card lookup"><h3>Manage a trip</h3><label>Reservation reference<input name="reference" placeholder="e.g. CA-7K2P9Q" required></label><label>Contact email<input name="email" type="email" placeholder="Email used at checkout" required></label><button class="button submit">Look up reservation →</button><p id="lookup-message" role="status"></p><div id="lookup-result"></div></form>
+    </section>
+    <section id="how" class="section"><p class="eyebrow">A SIMPLE FLOW</p><h2>From search to saved trip.</h2><div class="steps"><article><b>01</b><h3>Search a route</h3><p>Pick South African cities, dates, and travellers.</p></article><article><b>02</b><h3>Choose a sample fare</h3><p>Compare illustrative itineraries in rands.</p></article><article><b>03</b><h3>Save your reservation</h3><p>Review your trip and save the flight reference.</p></article></div></section>
+  </main>
+  <footer><a class="brand" href="#top">☁ Cloudy Airlines<span class="accent">.</span></a><span> · created by Marlon chibaya</span></footer>
+
+  <dialog id="booking-dialog" class="card">
+    <button id="close" class="close" type="button" aria-label="Close">×</button>
+    <p class="eyebrow">CLOUDY AIRLINES · FLIGHT RESERVATION</p><div id="booking-content"></div>
+  </dialog>
+    
+</body>
+<script src="app.js"></script>
+</html>
